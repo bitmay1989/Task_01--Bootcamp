@@ -1,0 +1,164 @@
+@import url("./fonts.css");
+
+/* Reset and Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* Color Palette and other variables */
+    --color-primary: #219f95;
+    --color-secondary: #234894;
+    --color-light: #fafafa;
+    --color-dark: #333;
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+}
+
+/* Typography */
+html {
+    font-size: 62.5%; /* Base font size of 10px */
+}
+
+body, * {
+    font-family: Vazirmatn, sans-serif;
+}
+
+/* Layout */
+
+.container {
+    width: 70vw;
+    margin: 5% auto;
+}
+
+/* .container {
+    position: relative;
+    top: 15%;
+    right: 15%;
+    width: 70vw;
+} */
+
+/* Components */
+
+.title {
+    margin: 4rem 0;
+}
+
+.users {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .users {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .users {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.grid-user {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "upload date"
+        "registration ."
+        "name button";
+    align-items: center;
+}
+
+.date {
+    grid-area: date;
+    justify-self: left;
+}
+
+.date__text{
+    font-size: 1rem;
+    font-weight: 300;
+    color: gray;
+}
+
+.upload { 
+    grid-area: upload;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color:var(--color-secondary);
+}
+  
+.registration { 
+    grid-area: registration;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.name { 
+    grid-area: name;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+  
+.button { 
+    grid-area: button;
+    justify-self: left;
+    align-self: flex-end;
+}
+
+.user_header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+}
+  
+.user_badge{
+    width: 30px;
+    height: 30px;
+    background-color: #afcedd;
+    color:var(--color-secondary);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: var(--border-radius-sm);
+}
+  
+.user_image{
+    width: 50px;
+    height: 50px;
+    display: inline;
+    border-radius: var(--border-radius-md);
+    object-fit: contain;
+}
+  
+ /* Buttons */ 
+
+.user_button {
+    background: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1.2rem 1rem;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+.btn--primary {
+    background-color: #219f95;
+    color: var(--color-light);
+}
+  
